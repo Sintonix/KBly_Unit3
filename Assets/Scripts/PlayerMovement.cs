@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rbPlayer;
     public float gravityModifer;
+    public float jumpForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         bool spaceDown = Input.GetKeyDown(KeyCode.Space);
         if (spaceDown)
         {
-            rbPlayer.AddForce(Vector3.up * 10, ForceMode.Impulse);
+            rbPlayer.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 }
